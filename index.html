@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Network Profile</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --accent-color: #ee0000;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --accent-color: #ee0000;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2em;
+      transition: background-color 0.3s, color 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    header {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5em;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .toggle-btn {
+      background: var(--accent-color);
+      border: none;
+      color: white;
+      padding: 0.5em 1em;
+      font-size: 1rem;
+      border-radius: 0.5em;
+      cursor: pointer;
+    }
+
+    section {
+      max-width: 800px;
+      line-height: 1.6;
+    }
+
+    .badge {
+      background: var(--accent-color);
+      color: white;
+      padding: 0.2em 0.5em;
+      border-radius: 0.3em;
+      font-size: 0.8em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "• ";
+      color: var(--accent-color);
+    }
+
+    .download-btn {
+      margin-top: 2em;
+      display: inline-block;
+      background: var(--accent-color);
+      color: white;
+      padding: 0.7em 1.5em;
+      border: none;
+      border-radius: 0.5em;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #005fcc;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.9em;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📶 Student Network Profile</h1>
+    <button class="toggle-btn" onclick="toggleTheme()">🌞/🌙</button>
+  </header>
+
+  <section>
+    <p><span class="badge">Unofficial</span> Made by students, for students.</p>
+
+    <h2>What is this?</h2>
+    <p>This profile helps iPads connect to school Wi-Fi without giving the school full control.</p>
+
+    <h2>What our profile does:</h2>
+    <ul>
+      <li>✅ Wi-Fi configuration only</li>
+      <li>✅ No spying, no tracking</li>
+      <li>✅ No remote access</li>
+      <li>✅ 100% student-controlled</li>
+    </ul>
+
+    <h2>What our profile doesn’t do:</h2>
+    <ul>
+      <li>❌ Doesn’t hand over control</li>
+      <li>❌ No surveillance tools</li>
+      <li>❌ No hidden nonsense</li>
+    </ul>
+
+    <p><strong>Your device, your rules.</strong> Keep things simple, private, and safe.</p>
+
+    <a href="about:blank" class="download-btn">📥 Download Profile</a>
+  </section>
+
+  <footer>
+    <p>Made with 🧠 and 💻 by students who care. No affiliation with the school. Use at your own discretion.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", newTheme);
+    }
+
+    // Detect and apply user's preferred theme
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
+</body>
+</html>
